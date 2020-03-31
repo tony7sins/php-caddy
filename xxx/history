@@ -1,0 +1,5 @@
+# commit
+docker build -t php:7.3-caddy .
+docker run --rm -d -p 8080:80 php:7.3-caddy 
+docker logs -f $(d ps -q)       
+# 
