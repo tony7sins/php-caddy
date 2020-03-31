@@ -11,3 +11,7 @@ docker images | grep tony7sins
 docker pull tony7sins/php:7.3-caddy && docker images | grep tony7sins
 docker run --rm -it -p 8080:80 tony7sins/php:7.3-caddy bash
 # com.github Repository
+git remote add origin git@github.com:tony7sins/php-caddy.git
+git add .
+git commit -m "push commit"
+git push -u origin
