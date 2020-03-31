@@ -2,4 +2,12 @@
 docker build -t php:7.3-caddy .
 docker run --rm -d -p 8080:80 php:7.3-caddy 
 docker logs -f $(d ps -q)       
-# 
+# com.docker.hub Repository
+docker login
+docker build -t tony7sins/php:7.3-caddy .
+docker push tony7sins/php:7.3-caddy 
+docker rmi tony7sins/php:7.3-caddy
+docker images | grep tony7sins
+docker pull tony7sins/php:7.3-caddy && docker images | grep tony7sins
+docker run --rm -it -p 8080:80 tony7sins/php:7.3-caddy bash
+# com.github Repository
