@@ -35,4 +35,7 @@ docker tag \
     tony7sins/php:1.0.0-caddy \
     registry.gitlab.com/tony7sins/docker-php/php:latest
 docker push registry.gitlab.com/tony7sins/docker-php/php:latest
-#
+# GitLab build
+git add .gitlab.ci.yml 
+git commit -am "build(image): GitLab CI commit"
+git push gitlab master
