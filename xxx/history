@@ -15,3 +15,24 @@ git remote add origin git@github.com:tony7sins/php-caddy.git
 git add .
 git commit -m "push commit"
 git push -u origin
+# com.gitlab Registry
+git remote add gitlab git@gitlab.com:tony7sins/docker-php.git
+git remote -v
+git pull
+git push gitlab master
+git push gitlab --tags
+docker login registry.gitlab.com
+// docker build -t tony7sins/php:1.0.0-caddy .
+docker pull tony7sins/php:1.0.0-caddy
+// docker push tony7sins/php:1.0.0-caddy
+docker tag \
+    tony7sins/php:1.0.0-caddy \
+    registry.gitlab.com/tony7sins/docker-php/php:1.0.0-caddy
+docker push registry.gitlab.com/tony7sins/docker-php/php:1.0.0-caddy
+docker pull tony7sins/php:1.0.0-caddy
+docker pull tony7sins/php:latest
+docker tag \
+    tony7sins/php:1.0.0-caddy \
+    registry.gitlab.com/tony7sins/docker-php/php:latest
+docker push registry.gitlab.com/tony7sins/docker-php/php:latest
+#
